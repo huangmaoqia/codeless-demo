@@ -7,10 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hmq.demo.dao.IBillDetailDao;
+import com.hmq.demo.model.po.Bill;
 import com.hmq.demo.model.po.BillDetail;
 import com.hmq.demo.model.po.User;
 import com.hmq.demo.model.vo.BillDetailVO;
 import com.hmq.demo.service.IBillDetailService;
+import com.hmq.demo.service.IBillService;
 import com.hmq.demo.service.IUserService;
 import com.hmq.framework.service.impl.GenViewService;
 import com.hmq.framework.utis.DataRelation;
@@ -22,12 +24,19 @@ public class BillDetailService extends GenViewService<BillDetailVO,BillDetail, S
 	@Autowired
 	IUserService userService;
 	
+	@Autowired
+	IBillService billService;
+	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		DataRelation<BillDetailVO, User> cdr = DataRelation.newInstance();
-		cdr.setTargetService(userService);
-		cdr.addForwardRelation(BillDetailVO::getCreaterId, User::getId);
-		cdr.addBackwardRelation(BillDetailVO::setCreaterName,User::getUserName);
+//		DataRelation<BillDetailVO, User> cdr = new DataRelation<BillDetailVO, User>(userService);
+//		cdr.addForwardRelation(BillDetailVO::getCreaterId, User::getId);
+//		cdr.addBackwardRelation(BillDetailVO::setCreaterName,User::getUserName);
+//		this.addColumnDataRelation(cdr);
+		
+		DataRelation<BillDetailVO, Bill> cdr = new DataRelation<BillDetailVO, Bill>(billService);
+		cdr.addForwardRelation(BillDetailVO::getBillId, Bill::getId);
+		cdr.addBackwardRelation(BillDetailVO::setBill,null);
 		this.addColumnDataRelation(cdr);
 
 	}

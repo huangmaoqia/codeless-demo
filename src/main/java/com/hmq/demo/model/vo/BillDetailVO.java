@@ -1,5 +1,6 @@
 package com.hmq.demo.model.vo;
 
+import com.hmq.demo.model.po.Bill;
 import com.hmq.framework.model.GenVO;
 
 public class BillDetailVO extends GenVO<String>{
@@ -9,6 +10,8 @@ public class BillDetailVO extends GenVO<String>{
 	private String goodsId;
 
 	private long amount;
+	
+	private Bill bill=null;
 
 	public String getBillId() {
 		return billId;
@@ -42,6 +45,14 @@ public class BillDetailVO extends GenVO<String>{
 
 	public void setCreaterName(String createrName) {
 		this.createrName = createrName;
+	}
+
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
 	}
 
 }

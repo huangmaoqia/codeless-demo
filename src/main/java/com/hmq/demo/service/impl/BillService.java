@@ -28,14 +28,12 @@ public class BillService extends GenViewService<BillVO, Bill, String, IBillDao>
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		DataRelation<BillVO, User> cdr = DataRelation.newInstance();
-		cdr.setTargetService(userService);
+		DataRelation<BillVO, User> cdr = new DataRelation<BillVO, User>(userService);
 		cdr.addForwardRelation(BillVO::getCreaterId, User::getId);
 		cdr.addBackwardRelation(BillVO::setCreaterName,User::getUserName);
 		this.addColumnDataRelation(cdr);
 
-		DataRelation<BillVO, BillDetailVO> sdr = DataRelation.newInstance();
-		sdr.setTargetService(billDetailService);
+		DataRelation<BillVO, BillDetailVO> sdr = new DataRelation<BillVO, BillDetailVO>(billDetailService);
 		sdr.addForwardRelation(BillVO::getId, BillDetailVO::getBillId);
 		sdr.addBackwardRelation(BillVO::setBillDetailVOList,null);
 		this.addSonDataRelation(sdr);
