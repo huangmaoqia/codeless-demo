@@ -37,6 +37,8 @@ public class BillService extends GenViewService<BillVO, Bill, String, IBillDao>
 		sdr.addForwardRelation(BillVO::getId, BillDetailVO::getBillId);
 		sdr.addBackwardRelation(BillVO::setBillDetailVOList,null);
 		this.addSonDataRelation(sdr);
+		
+		this.addColumnDataRelation(sdr);
 	}
 	
 }

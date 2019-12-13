@@ -7,10 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hmq.demo.dao.IBillDetailDao;
-import com.hmq.demo.model.po.Bill;
 import com.hmq.demo.model.po.BillDetail;
-import com.hmq.demo.model.po.User;
 import com.hmq.demo.model.vo.BillDetailVO;
+import com.hmq.demo.model.vo.BillVO;
 import com.hmq.demo.service.IBillDetailService;
 import com.hmq.demo.service.IBillService;
 import com.hmq.demo.service.IUserService;
@@ -34,10 +33,10 @@ public class BillDetailService extends GenViewService<BillDetailVO,BillDetail, S
 //		cdr.addBackwardRelation(BillDetailVO::setCreaterName,User::getUserName);
 //		this.addColumnDataRelation(cdr);
 		
-		DataRelation<BillDetailVO, Bill> cdr = new DataRelation<BillDetailVO, Bill>(billService);
-		cdr.addForwardRelation(BillDetailVO::getBillId, Bill::getId);
-		cdr.addBackwardRelation(BillDetailVO::setBill,null);
-		this.addColumnDataRelation(cdr);
+//		DataRelation<BillDetailVO, BillVO> cdr = new DataRelation<BillDetailVO, BillVO>(billService);
+//		cdr.addForwardRelation(BillDetailVO::getBillId, BillVO::getId);
+//		cdr.addBackwardRelation(BillDetailVO::setBillVO,null);
+//		this.addColumnDataRelation(cdr);
 
 	}
 
