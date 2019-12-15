@@ -28,9 +28,14 @@ public class UserService extends GenViewService<UserVO, User, String, IUserDao> 
 //			return builder.equal(expression, "1");
 //		}));
 		
-		EQCondition<User> cd=new EQCondition<User> (User::getCreaterId,"1");
-		ICondition<User> spe=cd.andEQ(User::getModifierId,"2");
-		return this.findBySpec(spe);
+//		EQCondition<User> cd=new EQCondition<User> (User::getCreaterId,"1");
+//		ICondition<User> spe=cd.andEq(User::getModifierId,"2")
+//				.andEQ(User::getUserName, "andy")
+//				.andEQ(User::getUserName, "andy");
+//		spe.
+//		return this.findBySpec(spe);
+		
+		return null;
 		
 	}
 }
