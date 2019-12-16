@@ -10,8 +10,8 @@ import com.hmq.demo.model.po.User;
 import com.hmq.demo.model.vo.UserVO;
 import com.hmq.demo.service.IUserService;
 import com.hmq.framework.service.impl.GenViewService;
-import com.hmq.utis.framework.query.EQCondition;
-import com.hmq.utis.framework.query.ICondition;
+import com.hmq.framework.utils.query.AndConditions;
+import com.hmq.framework.utils.query.OrConditions;
 
 @Service
 @Transactional
@@ -35,7 +35,12 @@ public class UserService extends GenViewService<UserVO, User, String, IUserDao> 
 //		spe.
 //		return this.findBySpec(spe);
 		
-		return null;
+		AndConditions<User> cds=new AndConditions<User>();
+		cds.addCdEq(User::getCreaterId,"1")
+			.addCdIn(User::getUserName, new String[]{"andy","mini"})
+			.addCds(new OrConditions<User>());
+		
+		return this.findBySpec(cds);
 		
 	}
 }

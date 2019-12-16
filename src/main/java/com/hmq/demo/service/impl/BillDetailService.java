@@ -9,12 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.hmq.demo.dao.IBillDetailDao;
 import com.hmq.demo.model.po.BillDetail;
 import com.hmq.demo.model.vo.BillDetailVO;
-import com.hmq.demo.model.vo.BillVO;
 import com.hmq.demo.service.IBillDetailService;
 import com.hmq.demo.service.IBillService;
 import com.hmq.demo.service.IUserService;
 import com.hmq.framework.service.impl.GenViewService;
-import com.hmq.framework.utis.DataRelation;
 
 @Service
 @Transactional
