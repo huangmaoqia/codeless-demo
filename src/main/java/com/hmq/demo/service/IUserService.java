@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.hmq.demo.model.po.User;
 import com.hmq.demo.model.vo.UserVO;
-import com.hmq.framework.service.ICommonService;
+import com.hmq.framework.service.IGenViewService;
 
-public interface IUserService{
+public interface IUserService extends IGenViewService<UserVO,User,String>{
 	public List<User> tt();
 }
