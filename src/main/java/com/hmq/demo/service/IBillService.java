@@ -2,8 +2,8 @@ package com.hmq.demo.service;
 
 import com.hmq.demo.model.po.Bill;
 import com.hmq.demo.model.vo.BillVO;
-import com.hmq.framework.service.IGenViewService;
+import com.hmq.framework.service.ICommonService;
 
-public interface IBillService extends IGenViewService<BillVO,Bill,String>{
+public interface IBillService{
 
 }

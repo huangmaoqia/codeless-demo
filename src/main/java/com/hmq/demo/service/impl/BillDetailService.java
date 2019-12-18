@@ -29,15 +29,15 @@ public class BillDetailService extends GenViewService<BillDetailVO,BillDetail, S
 	
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		DataRelation<BillDetailVO, User> cdr = new DataRelation<BillDetailVO, User>(userService);
-		cdr.addForwardRelation(BillDetailVO::getCreaterId, User::getId);
-		cdr.addBackwardRelation(BillDetailVO::setCreaterName,User::getUserName);
-		this.addColumnDataRelation(cdr);
-		
-		DataRelation<BillDetailVO, BillVO> cdr2 = new DataRelation<BillDetailVO, BillVO>(billService);
-		cdr2.addForwardRelation(BillDetailVO::getBillId, BillVO::getId);
-		cdr2.addBackwardRelation(BillDetailVO::setBillVO,null);
-		this.addColumnDataRelation(cdr2);
+//		DataRelation<BillDetailVO, User> cdr = new DataRelation<BillDetailVO, User>(userService);
+//		cdr.addForwardRelation(BillDetailVO::getCreaterId, User::getId);
+//		cdr.addBackwardRelation(BillDetailVO::setCreaterName,User::getUserName);
+//		this.addColumnDataRelation(cdr);
+//		
+//		DataRelation<BillDetailVO, BillVO> cdr2 = new DataRelation<BillDetailVO, BillVO>(billService);
+//		cdr2.addForwardRelation(BillDetailVO::getBillId, BillVO::getId);
+//		cdr2.addBackwardRelation(BillDetailVO::setBillVO,null);
+//		this.addColumnDataRelation(cdr2);
 
 	}
 
