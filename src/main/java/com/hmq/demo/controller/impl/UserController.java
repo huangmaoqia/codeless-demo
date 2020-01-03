@@ -1,5 +1,6 @@
 package com.hmq.demo.controller.impl;
 
+<<<<<<< HEAD
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -10,6 +11,8 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.GetMapping;
+=======
+>>>>>>> 9a91ad275ddcece6024c60fdfb200cf1dd1c8b75
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +24,7 @@ import com.hmq.framework.controller.impl.GenViewController;
 @RestController
 @RequestMapping("/user")
 public class UserController extends GenViewController<UserVO, User, String, IUserService> {
+<<<<<<< HEAD
 	
 	@GetMapping("/login")
     public String login(String userName, String password) {
@@ -49,4 +53,6 @@ public class UserController extends GenViewController<UserVO, User, String, IUse
             return "登录失败";
         }
     }
+=======
+>>>>>>> 9a91ad275ddcece6024c60fdfb200cf1dd1c8b75
 }
