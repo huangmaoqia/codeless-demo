@@ -41,7 +41,6 @@
 			<artifactId>shiro-spring</artifactId>
 			<version>1.4.0</version>
 		</dependency>
-<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -55,8 +54,6 @@
 			<version>3.1.12</version>
 		</dependency>
 
-=======
->>>>>>> 9a91ad275ddcece6024c60fdfb200cf1dd1c8b75
 	</dependencies>
 
 	<build>

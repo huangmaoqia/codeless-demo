@@ -1,4 +1,4 @@
-package com.hmq.demo.cxf.service.client;
+package com.hmq.demo.cxf.client;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
