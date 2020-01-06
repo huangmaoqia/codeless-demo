@@ -9,7 +9,7 @@ import com.hmq.demo.cxf.service.ISayHello;
 public class CxfClient {
 
 	public static void main(String[] args) {
-		CxfClient.main2();
+		CxfClient.main3();
 	}
 
 	/**
@@ -49,6 +49,40 @@ public class CxfClient {
 		try {
 			// invoke("方法名",参数1,参数2,参数3....);
 			objects = client.invoke("sayHello", "ysl");
+			System.out.println("返回数据:" + objects[0]);
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main3() {
+		// 创建动态客户端
+		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+		Client client = dcf.createClient("http://127.0.0.1:8110/cxf/ygei/mapp/cjapi/dataCollectionService?wsdl");
+		// 需要密码的情况需要加上用户名和密码
+		// client.getOutInterceptors().add(new ClientLoginInterceptor(USER_NAME,
+		// PASS_WORD));
+		Object[] objects = null;
+		try {
+			// invoke("方法名",参数1,参数2,参数3....);
+			objects = client.invoke("I_JLZDH_HQCBQDYCCBS", "1","2","3","4");
+			System.out.println("返回数据:" + objects[0]);
+		} catch (java.lang.Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main4() {
+		// 创建动态客户端
+		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+		Client client = dcf.createClient("http://127.0.0.1:9080/grm/webservice/noticeBatchCollectService?wsdl");
+		// 需要密码的情况需要加上用户名和密码
+		// client.getOutInterceptors().add(new ClientLoginInterceptor(USER_NAME,
+		// PASS_WORD));
+		Object[] objects = null;
+		try {
+			// invoke("方法名",参数1,参数2,参数3....);
+			objects = client.invoke("execOver", "1","2","3");
 			System.out.println("返回数据:" + objects[0]);
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();

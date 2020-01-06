@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.hmq.demo.cxf.service.impl.MetCtrlService;
 import com.hmq.demo.cxf.service.impl.SayHello;
 
 @Configuration
@@ -32,9 +33,16 @@ public class CxfConfig {
 
 	// 终端路径
 	@Bean
-	public Endpoint endpoint() {
+	public Endpoint helloService() {
 		EndpointImpl endpoint = new EndpointImpl(springBus(), new SayHello());
-		endpoint.publish("/sayHello");
+		endpoint.publish("/helloService");
+		return endpoint;
+	}
+	
+	@Bean
+	public Endpoint iMetCtrlService() {
+		EndpointImpl endpoint = new EndpointImpl(springBus(), new MetCtrlService());
+		endpoint.publish("/iMetCtrlService");
 		return endpoint;
 	}
 }
